@@ -1,9 +1,15 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
+import { addStrike } from "./App";
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test("renders without crashing", () => {
+  render(<App />);
+})
+
+test("addStrike adds 1 to strike state", () => {
+  const expected = 1;
+  const actual = addStrike(0);
+
+  expect(actual).toBe(expected);
 });

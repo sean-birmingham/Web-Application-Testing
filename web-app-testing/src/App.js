@@ -4,16 +4,19 @@ import Dashboard from "./components/Dashboard";
 
 import './App.css';
 
+export const addStrike = currentValue => {
+  return currentValue + 1;
+}
+
 function App() {
   const [strike, setStrike] = useState(0);
   const [ball, setBall] = useState(0);
 
   const handleStrike = () => {
+    setStrike(addStrike(strike))
     if (strike > 2) {
       setStrike(0)
       setBall(0)
-    } else {
-      setStrike(strike + 1)
     }
   }
 
